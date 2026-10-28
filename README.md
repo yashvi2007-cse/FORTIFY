@@ -2,20 +2,6 @@
 
 ### Beyond Graphing. Beyond Learning. Beyond Limits.
 
-\<p align="center">
-&#x20; \<strong>Making Mathematics Interactive, Intelligent, and Limitless.\</strong>
-\</p>
-
-\<p align="center">
-&#x20; An ambitious next-generation mathematical workspace designed to transform how people visualize, explore, understand, and experience mathematics.
-\</p>
-
-\<p align="center">
-&#x20; \<a href="[https://fortify-iota.vercel.app/](https://fortify-iota.vercel.app/)">🌐 Live Demo\</a>
-\</p>
-
----
-
 ## 🚀 About FORTIFY
 
 FORTIFY is an interactive mathematics platform envisioned to make mathematical exploration more intuitive, engaging, and accessible.
@@ -130,10 +116,4 @@ It should be visual, interactive, collaborative, creative, and accessible to eve
 FORTIFY aims to bring that vision to life.
 
 ---
-
-\<p align="center">
-&#x20; \<strong>FORTIFY — Mathematics Without Limits.\</strong>
-&#x20; \<br/>
-&#x20; Explore. Visualize. Understand. Create.
-\</p>
 
