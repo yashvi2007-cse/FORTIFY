@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #FAFAFC;
+  --bg-secondary: #F1F2F6;
+  --bg-card: #FFFFFF;
+  --text-primary: #171923;
+  --text-secondary: #747989;
+  --accent: #7655E8;
+  --accent-light: #ECE8FD;
+  --accent-secondary: #17A890;
+  --accent-secondary-light: #E4F7F4;
+  --border-color: #E7E7ED;
+  --canvas-grid: #EAEBED;
+  --canvas-axis: #9BA0B2;
+}
+
+.dark {
+  --bg-primary: #0C0C14;
+  --bg-secondary: #13131E;
+  --bg-card: #1A1A28;
+  --text-primary: #F8F8FC;
+  --text-secondary: #9FA4B8;
+  --accent: #8E70FF;
+  --accent-light: #2A244A;
+  --accent-secondary: #17A890;
+  --accent-secondary-light: #163632;
+  --border-color: #27273A;
+  --canvas-grid: #1A1A28;
+  --canvas-axis: #4E5268;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+}
+
+/* Atmospheric Glow Background */
+.aurora-bg {
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(118, 85, 232, 0.12), transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(23, 168, 144, 0.10), transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(236, 72, 153, 0.06), transparent 50%),
+    #FAFAFC;
+}
+
+.dark .aurora-bg {
+  background: 
+    radial-gradient(circle at 20% 10%, rgba(142, 112, 255, 0.20), transparent 50%),
+    radial-gradient(circle at 80% 15%, rgba(23, 168, 144, 0.15), transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(236, 72, 153, 0.10), transparent 55%),
+    #0C0C14;
+}
+
+/* Eye-Catching Glassmorphic Panels */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(231, 231, 237, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-panel {
+  background: rgba(20, 20, 32, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-dock {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(231, 231, 237, 0.9);
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.dark .glass-dock {
+  background: rgba(19, 19, 30, 0.88);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(118, 85, 232, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Glowing Neon Elements */
+.neon-glow-violet {
+  box-shadow: 0 0 24px -2px rgba(118, 85, 232, 0.5);
+}
+
+.neon-glow-teal {
+  box-shadow: 0 0 24px -2px rgba(23, 168, 144, 0.5);
+}
+
+.neon-glow-amber {
+  box-shadow: 0 0 24px -2px rgba(245, 158, 11, 0.5);
+}
+
+/* Glowing Borders & Highlights */
+.glow-card-active {
+  position: relative;
+  border-color: #7655E8 !important;
+  box-shadow: 0 0 20px -3px rgba(118, 85, 232, 0.25), inset 0 0 12px rgba(118, 85, 232, 0.05);
+}
+
+.dark .glow-card-active {
+  border-color: #8E70FF !important;
+  box-shadow: 0 0 25px -4px rgba(142, 112, 255, 0.35), inset 0 0 15px rgba(142, 112, 255, 0.08);
+}
+
+/* Gradient Text Utilities */
+.gradient-text-purple {
+  background: linear-gradient(135deg, #7655E8 0%, #A855F7 45%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-emerald {
+  background: linear-gradient(135deg, #17A890 0%, #10B981 50%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-sunset {
+  background: linear-gradient(135deg, #F43F5E 0%, #FB923C 50%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: translateX(-100%);
+  animation: shimmer-sweep 2.5s infinite;
+}
+
+/* Micro Animations */
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+
+.animate-float {
+  animation: subtle-float 3.5s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Sleek Sliders */
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #7655E8, #06B6D4);
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  border: 2px solid #7655E8;
+  box-shadow: 0 2px 8px rgba(118, 85, 232, 0.5);
+  cursor: pointer;
+  margin-top: -5px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(118, 85, 232, 0.8);
+}
+
+/* Custom sleek scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 145, 160, 0.28);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(118, 85, 232, 0.55);
+}
+
+.font-mono-math {
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+canvas:focus {
+  outline: none;
+}
